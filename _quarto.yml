@@ -2,8 +2,11 @@ project:
   type: website
 
 website:
-  title: "TIE_website"
+  # title: "TUHH Institute of Entrepreneurship"
+  favicon: assets/images/icon.svg
   navbar:
+    logo: "assets/images/logo.svg"
+    logo-href: index.qmd
     left:
       - href: index.qmd
         text: Home
