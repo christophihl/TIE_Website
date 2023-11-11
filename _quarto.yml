@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  # title: "TUHH Institute of Entrepreneurship"
+  title: "TUHH Institute of Entrepreneurship"
   favicon: assets/images/icon.svg
   navbar:
     logo: "assets/images/logo.svg"
