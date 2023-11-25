@@ -4,19 +4,93 @@ project:
 website:
   title: "TUHH Institute of Entrepreneurship"
   favicon: assets/images/icon.svg
+  open-graph:
+    locale: de_DE
+    site-name: TUHH Institute of Entrepreneurship
+  page-navigation: false
+  back-to-top-navigation: true
+  # bread-crumbs: true 
+
+  search:
+    location: navbar # vs sidebar
+    type: overlay
+  
+  
   navbar:
-    logo: "assets/images/logo.svg"
+    title: false
+    pinned: true
+    toggle-position: right # stable only in the next version
+    foreground: "$text_blue"
+    # background: "white"
+    logo: assets/images/logo.svg
     logo-href: index.qmd
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: Welcome
+      - href: news.qmd
+        text: News
+      - href: team.qmd
+        text: Team
+      - href: research.qmd
+        text: Research
+      - href: teaching.qmd
+        text: Teaching
+      - href: transfer.qmd
+        text: Transfer
+      - href: contact.qmd
+        text: Contact
+      # - icon: envelope
+      #   href: "mailto:startup.engineer@tuhh.de"
+
+      
+  page-footer:
+    left: |
+      [![](/assets/images/logo_tuhh_full.svg){fig-alt="Posit" width=145px}](https://www.tuhh.de/)
+    center: |
+      <span style='letter-spacing: 4px; text-transform: uppercase; font-weight: 400; font-size: 13px; line-height: 1.55;'>TU Hamburg</span><br><br> 
+      <span style='font-weight: 400; font-size: 14px; line-height: 1.8;'> TUHH Institute of Entrepreneurship<br>
+      Am Irrgarten 3<br>
+      21073 Hamburg</span>
+      <br><br>
+      <span style='letter-spacing: 4px; text-transform: uppercase; font-weight: 400; font-size: 13px; line-height: 1.55;'>Links</span><br><br>
+      ![](/assets/images/link_arrow.svg){height=1em}&nbsp;&nbsp;&nbsp;[Imprint](/imprint.qmd)<br><br>
+      ![](/assets/images/link_arrow.svg){width=1em}&nbsp;&nbsp;&nbsp;[Data Privacy](/privacy.qmd)
+    right: |
+      <span style='letter-spacing: 4px; text-transform: uppercase; font-weight: 400; font-size: 13px; line-height: 1.55;'>Get in touch</span><br><br> 
+      <span style='font-weight: 400; font-size: 14px; line-height: 1.8;'>
+      {{< fa envelope >}} : &nbsp;&nbsp;[startup.engineer@tuhh.de](mailto:startup.engineer@tuhh.de)<br>
+      {{< fa phone >}} : &nbsp;&nbsp;+49 (0)40 42878-4765<br>
+      {{< fa diamond-turn-right >}} : &nbsp;&nbsp;[Directions](/privacy.qmd)<br><br></span>
+      <span style='font-weight: 400; font-size: 20px; line-height: 1.55;'>
+      [{{< fa brands linkedin >}}](https://www.linkedin.com/company/tuhh-institute-of-entrepreneurship) &nbsp;&nbsp; 
+      [{{< fa brands twitter >}}](https://twitter.com/Startup3ngineer) &nbsp;&nbsp; 
+      [{{< fa brands github >}}](https://github.com/TUHHStartupEngineers)
+      <br><br></span>
+      Built with {{< fa brands r-project >}} and [![](/assets/images/quarto.png){height=1.2em}](https://quarto.org/)<br>
+      Source Code at [{{< fa brands github >}}](https://github.com/christophihl/TIE_website)
+    background: $footer_blue
+    foreground: "white"
+    
+  # sidebar:
+    # style: "floating"
+    # search: true
+    # contents: auto
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
     toc: true
+    theme:
+      light: theme/custom.scss
+      dark: [theme/custom.scss, theme/custom_dark.scss]
+    # css: theme/styles.css
+    code-copy: true
+    code-overflow: wrap
+    mainfont: Poppins
+    grid:
+      sidebar-width: 0px
+      body-width: $page_width
+      margin-width: 0px
+
 
 
 execute:
