@@ -1,0 +1,624 @@
+/*-- scss:defaults --*/
+
+
+// General variables
+
+$page_width: 1280px;
+$logo_size_l: 45px;
+$logo_size_m: 40px;
+$logo_size_s: 35px;
+
+
+// Colors
+$tuhh_blue: #00C1D4;
+
+$tuhh_orange: #FF7E15;
+$tuhh_green: #5AFFC5;
+$text_blue: #005e73;
+$footer_blue: #006a81; 
+
+$tuhh_purple: #7200FE;
+$tuhh_red: #FF4F4F;
+$tuhh_yellow: #FFDE36;
+$tuhh_pink: #FFAEA2;
+$tuhh_brown: #A8968C;
+$tuhh_grey: #D0D0CE;
+$tuhh_darkblue: #143BFF;
+
+
+$body-color: $text_blue !default;
+
+
+
+/*-- scss:rules --*/
+
+/* Navbar */
+
+
+
+.navbar {
+    background-color: white;
+}
+
+.fixed-top {
+    border-bottom: 1px solid $tuhh_blue;
+}
+
+
+#quarto-header > nav {
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+
+
+.navbar {
+    //border-bottom: 1px solid $tuhh_blue;
+    padding-bottom: 0rem;
+    padding-top: 0rem;
+    height: 80px; 
+}
+
+
+.navbar-container {
+  width: $page_width;
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+
+.navbar-brand-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: (80px - $logo_size_l)/2;
+    padding-top: (80px - $logo_size_l)/2;
+    border-right: 1px solid $tuhh_blue;
+}
+
+.navbar-brand.navbar-brand-logo {
+    margin-right: 0rem;
+    padding-bottom: 0rem;
+    padding-top: 0rem;
+}
+
+
+.navbar-logo {
+  max-height: $logo_size_l;
+  padding-bottom: 0rem;
+  padding-top: 0rem;
+  padding-right: 0rem;
+}
+
+
+
+.me-auto {
+    margin-right: 0rem !important;
+    display: flex;
+    width: 90%; /* Make inner flex container take up 90% of width */
+    justify-content: space-between; /* Spread items evenly across the inner flex container */
+}
+
+
+.nav-link {
+    letter-spacing: 2px;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.38;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.navbar .nav-link,
+.navbar .nav-link.active,
+.navbar .nav-link.show,
+.navbar .nav-link:hover {
+  color: #005e73; 
+}
+
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    padding-bottom: 26.5px;
+    padding-top: 26.5px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link.active, 
+.navbar-expand-lg .navbar-nav .nav-link.show {
+    border-bottom: 4px solid $tuhh_blue;
+}  
+
+
+@media (max-width: 1440px) {
+  .navbar {
+    height: 70px; 
+  }
+  .navbar-logo {
+    max-height: $logo_size_m ;
+    padding-bottom: 0rem;
+    padding-top: 0rem;
+    padding-right: 0rem;
+  }
+  .navbar-brand-container {
+    padding-bottom: (70px - $logo_size_m)/2;
+    padding-top: (70px - $logo_size_m)/2;
+    border-right: 1px solid $tuhh_blue;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    padding-bottom: 21.5px;
+    padding-top: 21.5px;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    height: 60px; 
+  }
+    .navbar-logo {
+      max-height: $logo_size_s ;
+      padding-bottom: 0rem;
+      padding-top: 0rem;
+      padding-right: 0rem;
+  }
+  .navbar-brand-container {
+    padding-bottom: (60px - $logo_size_s)/2;
+    padding-top: (60px - $logo_size_s)/2;
+    border-right: 1px solid $tuhh_blue;
+  }
+  .me-auto {
+    width: 100%; /* Make inner flex container take up 90% of width */
+  }
+}
+
+
+
+
+@media (max-width: 309.98px) { /* Target screens smaller than 310px */
+  .navbar-logo {
+    content: url("assets/images/icon.svg"); /* Replace with your smaller logo path */
+  }
+}
+
+
+.navbar-collapse {
+  background-color: white;
+}
+
+
+
+.navbar-nav-scroll {
+    max-width: 991px
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    border-top: 1px solid $tuhh_blue;
+    border-bottom: 1px solid $tuhh_blue;
+  }
+  .navbar-toggler[aria-expanded="true"] ~ .navbar-collapse .nav-item:not(:last-child) {
+    border-bottom: 1px dashed $tuhh_blue;
+  }
+  .navbar-toggler[aria-expanded="true"] ~ .navbar-collapse .nav-item {
+    height: 4rem;
+    position: relative;
+  }
+  .navbar-toggler[aria-expanded="true"] ~ .navbar-collapse .nav-link {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-bottom: 0px solid transparent;
+  }
+  .nav-link {
+    background-image: url('assets/images/link_blue.svg'); /* Replace with the path to your SVG */
+    background-size: 8px 8px; /* Adjust the width and height as needed */
+    background-repeat: no-repeat;
+    padding-right: 4rem;
+    background-position: 100% 50%; /* Adjust as needed */
+  }
+  .nav-item {
+    background-image: url('assets/images/breadcrumbs.svg'); /* Replace with the path to your SVG */
+    background-size: 25px 25px; /* Adjust the width and height as needed */
+    background-repeat: no-repeat;
+    padding-right: 4rem;
+    background-position: 97% 50%; /* Adjust as needed */
+  }
+}
+
+
+
+.navbar > i {
+    color: $text_blue !important;
+    background-color: $text_blue !important;
+}
+
+
+
+.navbar-brand-container {
+    color: $text_blue !important;
+}
+  
+  
+.navbar .quarto-navbar-tools  {
+    margin-left: auto;
+}
+
+.navbar .quarto-navbar-tools .quarto-navigation-tool .i {
+    color: $text_blue !important;
+}
+
+.navbar #quarto-search {
+    margin-left: 0rem;
+    margin-right: 0rem;
+    padding-right: 0rem;
+}
+
+.aa-DetachedSearchButton .aa-DetachedSearchButtonIcon svg {
+  display: none;
+}
+
+.aa-DetachedSearchButton {
+  padding-top: 0.4rem;
+}
+
+/* Add a custom icon (assuming you want to put it where the SVG was) */
+.aa-DetachedSearchButton .aa-DetachedSearchButtonIcon {
+  background-image: url("assets/images/search.svg"); /* Replace with your icon path */
+  background-size: contain; /* Resize image to fit the container */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-position: center; /* Center the image within the element */
+
+  /* Set the dimensions to fit your custom icon, might be similar to the SVG dimensions */
+  width: 25px; /* Match the width of your custom icon */
+  height: 25px; /* Match the height of your custom icon */
+}
+
+
+
+
+.navbar-toggler {
+    padding-left: (60px - 25px)/2;
+    padding-right: (60px - 25px)/2;
+    padding-bottom: (60px - 25px)/2;
+    padding-top: (60px - 25px)/2;
+    border-left: 1px solid $tuhh_blue;
+    border-right: 0px !important; 
+    border-top: 0px !important;
+    border-bottom: 0px !important;
+    border-radius: 0;
+}
+
+
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    max-height: 25px;
+    width: 25px;
+    background-image: url("assets/images/burger.svg");
+}
+
+/* When the navbar-toggler is expanded */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-image: url("assets/images/close.svg");
+}
+
+
+
+
+
+
+/* Footer */
+
+.footer {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    background-color: #006a81;
+}
+    
+    
+    
+.nav-footer {
+  width: $page_width;
+  padding-bottom: 5em;
+  display: flex;
+  align-items: flex-start; 
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nav-footer a {
+  text-decoration: none;
+}
+
+
+@media (max-width: 992px) {
+  .nav-footer-left img {
+    min-width: 120px; 
+    max-width: 120px; 
+    height: auto; 
+  }
+}
+
+
+
+.nav-footer-left {
+  padding-top: 7em;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.nav-footer-center {
+  vertical-align: top;
+  margin-top: 0em;
+  text-align: left;
+  padding-top: 7em;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.nav-footer-right {
+  text-align: left;
+  padding-top: 7em;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+
+
+
+/* Fonts */
+
+
+/* poppins-100 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 100;
+  src: url('fonts/poppins-v20-latin-100.eot'); /* IE9 Compat Modes */
+  src: url('fonts/poppins-v20-latin-100.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/poppins-v20-latin-100.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/poppins-v20-latin-100.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/poppins-v20-latin-100.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/poppins-v20-latin-100.svg') format('svg'); /* Legacy iOS */
+}
+/* poppins-100italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 100;
+  src: url('fonts/poppins-v20-latin-100italic.eot'); /* IE9 Compat Modes */
+  src: url('fonts/poppins-v20-latin-100italic.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/poppins-v20-latin-100italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/poppins-v20-latin-100italic.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/poppins-v20-latin-100italic.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/poppins-v20-latin-100italic.svg') format('svg'); /* Legacy iOS */
+}
+/* poppins-200 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 200;
+  src: url('fonts/poppins-v20-latin-200.eot'); /* IE9 Compat Modes */
+  src: url('fonts/poppins-v20-latin-200.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/poppins-v20-latin-200.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/poppins-v20-latin-200.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/poppins-v20-latin-200.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/poppins-v20-latin-200.svg') format('svg'); /* Legacy iOS */
+}
+/* poppins-200italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 200;
+  src: url('fonts/poppins-v20-latin-200italic.eot'); /* IE9 Compat Modes */
+  src: url('fonts/poppins-v20-latin-200italic.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/poppins-v20-latin-200italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/poppins-v20-latin-200italic.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/poppins-v20-latin-200italic.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/poppins-v20-latin-200italic.svg') format('svg'); /* Legacy iOS */
+}
+/* poppins-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  src: url('fonts/poppins-v20-latin-300.eot'); /* IE9 Compat Modes */
+  src: url('fonts/poppins-v20-latin-300.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/poppins-v20-latin-300.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/poppins-v20-latin-300.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/poppins-v20-latin-300.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/poppins-v20-latin-300.svg') format('svg'); /* Legacy iOS */
+}
+/* poppins-300italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 300;
+  src: url('fonts/poppins-v20-latin-300italic.eot'); /* IE9 Compat Modes */
+  src: url('fonts/poppins-v20-latin-300italic.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/poppins-v20-latin-300italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/poppins-v20-latin-300italic.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/poppins-v20-latin-300italic.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/poppins-v20-latin-300italic.svg') format('svg'); /* Legacy iOS */
+}
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/poppins-v20-latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('fonts/poppins-v20-latin-regular.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/poppins-v20-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/poppins-v20-latin-regular.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/poppins-v20-latin-regular.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/poppins-v20-latin-regular.svg') format('svg'); /* Legacy iOS */
+}
+/* poppins-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 400;
+  src: url('fonts/poppins-v20-latin-italic.eot'); /* IE9 Compat Modes */
+  src: url('fonts/poppins-v20-latin-italic.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/poppins-v20-latin-italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/poppins-v20-latin-italic.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/poppins-v20-latin-italic.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/poppins-v20-latin-italic.svg') format('svg'); /* Legacy iOS */
+}
+/* poppins-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: url('fonts/poppins-v20-latin-500.eot'); /* IE9 Compat Modes */
+  src: url('fonts/poppins-v20-latin-500.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/poppins-v20-latin-500.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/poppins-v20-latin-500.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/poppins-v20-latin-500.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/poppins-v20-latin-500.svg') format('svg'); /* Legacy iOS */
+}
+/* poppins-500italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 500;
+  src: url('fonts/poppins-v20-latin-500italic.eot'); /* IE9 Compat Modes */
+  src: url('fonts/poppins-v20-latin-500italic.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/poppins-v20-latin-500italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/poppins-v20-latin-500italic.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/poppins-v20-latin-500italic.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/poppins-v20-latin-500italic.svg') format('svg'); /* Legacy iOS */
+}
+/* poppins-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url('fonts/poppins-v20-latin-600.eot'); /* IE9 Compat Modes */
+  src: url('fonts/poppins-v20-latin-600.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/poppins-v20-latin-600.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/poppins-v20-latin-600.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/poppins-v20-latin-600.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/poppins-v20-latin-600.svg') format('svg'); /* Legacy iOS */
+}
+/* poppins-600italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 600;
+  src: url('fonts/poppins-v20-latin-600italic.eot'); /* IE9 Compat Modes */
+  src: url('fonts/poppins-v20-latin-600italic.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/poppins-v20-latin-600italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/poppins-v20-latin-600italic.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/poppins-v20-latin-600italic.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/poppins-v20-latin-600italic.svg') format('svg'); /* Legacy iOS */
+}
+/* poppins-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/poppins-v20-latin-700.eot'); /* IE9 Compat Modes */
+  src: url('fonts/poppins-v20-latin-700.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/poppins-v20-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/poppins-v20-latin-700.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/poppins-v20-latin-700.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/poppins-v20-latin-700.svg') format('svg'); /* Legacy iOS */
+}
+/* poppins-700italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 700;
+  src: url('fonts/poppins-v20-latin-700italic.eot'); /* IE9 Compat Modes */
+  src: url('fonts/poppins-v20-latin-700italic.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/poppins-v20-latin-700italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/poppins-v20-latin-700italic.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/poppins-v20-latin-700italic.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/poppins-v20-latin-700italic.svg') format('svg'); /* Legacy iOS */
+}
+/* poppins-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  src: url('fonts/poppins-v20-latin-800.eot'); /* IE9 Compat Modes */
+  src: url('fonts/poppins-v20-latin-800.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/poppins-v20-latin-800.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/poppins-v20-latin-800.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/poppins-v20-latin-800.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/poppins-v20-latin-800.svg') format('svg'); /* Legacy iOS */
+}
+/* poppins-800italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 800;
+  src: url('fonts/poppins-v20-latin-800italic.eot'); /* IE9 Compat Modes */
+  src: url('fonts/poppins-v20-latin-800italic.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/poppins-v20-latin-800italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/poppins-v20-latin-800italic.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/poppins-v20-latin-800italic.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/poppins-v20-latin-800italic.svg') format('svg'); /* Legacy iOS */
+}
+/* poppins-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 900;
+  src: url('fonts/poppins-v20-latin-900.eot'); /* IE9 Compat Modes */
+  src: url('fonts/poppins-v20-latin-900.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/poppins-v20-latin-900.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/poppins-v20-latin-900.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/poppins-v20-latin-900.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/poppins-v20-latin-900.svg') format('svg'); /* Legacy iOS */
+}
+/* poppins-900italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 900;
+  src: url('fonts/poppins-v20-latin-900italic.eot'); /* IE9 Compat Modes */
+  src: url('fonts/poppins-v20-latin-900italic.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/poppins-v20-latin-900italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('fonts/poppins-v20-latin-900italic.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('fonts/poppins-v20-latin-900italic.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('fonts/poppins-v20-latin-900italic.svg') format('svg'); /* Legacy iOS */
+}
+
+
+
+
+  
+
+
+
+

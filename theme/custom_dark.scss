@@ -1,0 +1,53 @@
+/*-- scss:defaults --*/
+
+
+$body-bg: #272935;
+$body-color: white;
+
+
+.navbar[data-bs-theme=dark] .quarto-header {
+    background: #23252f;
+}
+
+.navbar-dark, .navbar[data-bs-theme=dark] {
+    background-color: #23252f;
+}
+
+.navbar[data-bs-theme=dark] .navbar-collapse {
+  background-color: #23252f;
+}
+
+.navbar[data-bs-theme=dark] .nav-link,
+.navbar[data-bs-theme=dark] .nav-link.active,
+.navbar[data-bs-theme=dark] .nav-link.show,
+.navbar[data-bs-theme=dark] .nav-link:hover {
+  color: white !important; 
+}
+
+
+
+
+.navbar[data-bs-theme=dark] .quarto-color-scheme-toggle.alternate .bi::before {
+    background-image: url('assets/images/dark_mode.svg');
+}
+
+.navbar[data-bs-theme=dark] .aa-DetachedSearchButton .aa-DetachedSearchButtonIcon {
+  background-image: url("assets/images/search_light.svg"); /* Replace with your icon path */
+}
+
+
+@media (max-width: 991px) {
+  .navbar[data-bs-theme=dark] .nav-link, {
+    background-image: url('assets/images/link.svg'); /* Replace with the path to your SVG */
+  }
+  .navbar[data-bs-theme=dark] .nav-item {
+    background-image: url('assets/images/breadcrumbs_light.svg'); /* Replace with the path to your SVG */
+  }
+}
+
+.navbar[data-bs-theme=dark] .navbar-toggler-icon {
+    background-image: url("assets/images/burger_light.svg");
+}
+
+
+/*-- scss:rules --*/
