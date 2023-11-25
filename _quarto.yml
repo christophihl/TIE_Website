@@ -53,8 +53,8 @@ website:
       21073 Hamburg</span>
       <br><br>
       <span style='letter-spacing: 4px; text-transform: uppercase; font-weight: 400; font-size: 13px; line-height: 1.55;'>Links</span><br><br>
-      ![](/assets/images/link_arrow.svg){height=1em}&nbsp;&nbsp;&nbsp;[Imprint](/imprint.qmd)<br><br>
-      ![](/assets/images/link_arrow.svg){width=1em}&nbsp;&nbsp;&nbsp;[Data Privacy](/privacy.qmd)
+      ![](/assets/images/link.svg){height=1em}&nbsp;&nbsp;&nbsp;[Imprint](/imprint.qmd)<br><br>
+      ![](/assets/images/link.svg){width=1em}&nbsp;&nbsp;&nbsp;[Data Privacy](/privacy.qmd)
     right: |
       <span style='letter-spacing: 4px; text-transform: uppercase; font-weight: 400; font-size: 13px; line-height: 1.55;'>Get in touch</span><br><br> 
       <span style='font-weight: 400; font-size: 14px; line-height: 1.8;'>
