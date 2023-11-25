@@ -50,4 +50,12 @@ $body-color: white;
 }
 
 
+.navbar[data-bs-theme=dark] .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-image: url("assets/images/close_light.svg");
+}
+
+
+
+
+
 /*-- scss:rules --*/
