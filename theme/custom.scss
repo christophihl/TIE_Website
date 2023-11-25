@@ -34,6 +34,14 @@ $body-color: $text_blue !default;
 
 /* Navbar */
 
+.navbar .navbar-brand-container {
+    order: 1 !important;  
+}
+
+
+
+
+
 
 
 .navbar {
@@ -225,6 +233,12 @@ $body-color: $text_blue !default;
     background-repeat: no-repeat;
     padding-right: 4rem;
     background-position: 97% 50%; /* Adjust as needed */
+  }
+  .navbar .quarto-navbar-tools {
+    order: 2 !important;  
+  }
+  .navbar #quarto-search {
+    order: 3 !important;  
   }
 }
 
